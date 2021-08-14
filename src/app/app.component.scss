@@ -1,0 +1,16 @@
+.main {
+  display: grid;
+  grid-template-columns: 60vw 40vw;
+  grid-template-rows: 40vw minmax(4em, max-content) auto;
+  height: 100%;
+  width: 100%;
+
+  div {
+    padding: 2em;
+  }
+
+}
+
+.about {
+  grid-column: 1 / 3;
+}
