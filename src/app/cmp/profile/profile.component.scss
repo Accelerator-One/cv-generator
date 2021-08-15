@@ -1,4 +1,30 @@
+@import "../../../color.scss";
+
 .hidden {
   display: none;
   visibility: hidden;
+}
+
+mat-icon {
+
+  font-size: 28vh;
+  color: blue;
+
+  &:hover {
+    color: $primary-normal;
+  }
+
+}
+
+img {
+  border-radius: 14vh;
+  width: 28vh;
+  height: 28vh;
+}
+
+.imgContainer {
+  border-radius: 14vh;
+  width: 28vh;
+  height: 28vh;
+  overflow: hidden;
 }

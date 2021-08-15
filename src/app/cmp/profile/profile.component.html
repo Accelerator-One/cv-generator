@@ -1,4 +1,15 @@
-<mat-icon *ngIf='!imgSelected && !viewMode' aria-hidden="false" aria-label="Profile" style="font-size: 24vh;">
-  account_circle
+<mat-icon 
+  *ngIf='!imgSelected && !viewMode' 
+  aria-hidden="false" 
+  (mouseenter)="onEnter()" 
+  (mouseleave)="onLeave()"
+  (click)="onClick()" 
+  aria-label="Profile">
+  {{ iconName }}
 </mat-icon>
-<input type="file" accept="img/*" class="hidden" />
+
+<div class='imgContainer'>
+  <img id='profileImg' alt='profile' [ngClass]="imgSelected?'':'hidden'"/>
+</div>
+
+<input id="profileInput" type="file" accept="image/*" class="hidden" (change)='setProfile()' />
