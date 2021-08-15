@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   public iconName: string = 'account_circle';
 
   constructor() {
-  
+
   }
 
   ngOnInit(): void {
@@ -40,11 +40,31 @@ export class ProfileComponent implements OnInit {
 
     const inputRef: any = document.getElementById('profileInput');
     const profileImg: any = document.getElementById('profileImg');
+    const docHeight = (window.innerHeight * 28) / 100;
     const fileData = inputRef?.files[0];
 
     this.imgURL = URL.createObjectURL(fileData);
     profileImg.src = this.imgURL;
     this.imgSelected = true;
+
+    setTimeout(() => {
+
+      let width = profileImg.width;
+      let height = profileImg.height;
+
+      if (width >= height) {
+        profileImg.style.height = docHeight + 'px';
+        profileImg.style.width = 'auto';
+        profileImg.style.right = `${Math.abs(docHeight - profileImg.width) / 2}px`;
+      }
+      else {
+        profileImg.style.width = docHeight + 'px';
+        profileImg.style.height = 'auto';
+        profileImg.style.bottom = `${Math.abs(docHeight - profileImg.height) / 2}px`;
+      }
+
+    }, 200);
+
   }
 
 }
