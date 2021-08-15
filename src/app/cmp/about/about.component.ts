@@ -12,7 +12,7 @@ export class AboutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.about = "Write about yourself here..."
+    this.about = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, delectus eaque doloremque cupiditate sequi voluptatem quos praesentium illo provident esse quam a non iure laborum laboriosam. Fugiat magnam nulla incidunt?"
   }
 
 }

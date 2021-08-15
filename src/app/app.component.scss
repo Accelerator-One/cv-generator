@@ -1,25 +1,25 @@
 .main {
 
   display: grid;
-  grid-template-columns: auto 32vh;
-  height: 100%;
+  grid-template-columns: 60% 40%;
+  height: auto;
   min-width: 100%;
 
   div {
-
-    &:nth-child(1) {
-      padding: 2em 0 0 2em;
-    }
-
-    &:nth-child(2) {
-      padding: 2em 2em 0 0;
-    }
-
     padding: 0 2em;
-    
   } 
 }
 
 .about {
   grid-column: 1 / 3;
+}
+
+.space-between {
+  display: flex;
+  padding: 2em 2em 0 2em;
+  justify-content: space-between;
+}
+
+.margin {
+  margin: 0 2em;
 }
