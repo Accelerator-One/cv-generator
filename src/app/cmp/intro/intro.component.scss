@@ -1,0 +1,22 @@
+@import '../../../color.scss';
+
+.mat-header {
+  font-size: xx-large;
+}
+
+h4 {
+  margin: 0 0 0.4em;
+
+  &:nth-child(1) {
+    color: #1565c0;
+  }
+
+  &:nth-child(2) {
+    color: $primary-normal;
+  }
+
+  &:nth-child(3) {
+    color: $primary-light;
+  }
+
+}

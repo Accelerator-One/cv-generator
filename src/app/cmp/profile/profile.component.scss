@@ -8,10 +8,11 @@
 mat-icon {
 
   font-size: 28vh;
-  color: blue;
+  color: $primary-normal;
 
   &:hover {
-    color: $primary-normal;
+    color: $primary-light;
+    cursor: pointer;
   }
 
 }
