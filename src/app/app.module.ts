@@ -10,6 +10,7 @@ import { IntroComponent } from './cmp/intro/intro.component';
 import { AboutComponent } from './cmp/about/about.component';
 import { LeftComponent } from './cmp/left/left.component';
 import { RightComponent } from './cmp/right/right.component';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RightComponent } from './cmp/right/right.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

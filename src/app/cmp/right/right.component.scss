@@ -7,3 +7,12 @@ h2 {
 p {
   color: $primary-dark;
 }
+
+div[mat-line] {
+  font-size: 0.8em !important;
+}
+
+ul {
+  line-height: 1.5;
+  color: $primary-normal;
+}

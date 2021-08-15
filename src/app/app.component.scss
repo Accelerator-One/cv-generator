@@ -1,9 +1,9 @@
 .main {
+
   display: grid;
-  grid-template-columns: 60vw 32vw;
-  grid-template-rows: 32vw minmax(2em, 8em) auto;
+  grid-template-columns: auto 32vh;
   height: 100%;
-  width: 100%;
+  min-width: 100%;
 
   div {
 
@@ -15,10 +15,9 @@
       padding: 2em 2em 0 0;
     }
 
-    padding: 0 2em 0 2em;
-
-  }
-
+    padding: 0 2em;
+    
+  } 
 }
 
 .about {
