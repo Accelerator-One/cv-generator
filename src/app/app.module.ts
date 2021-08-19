@@ -12,6 +12,7 @@ import { LeftComponent } from './cmp/left/left.component';
 import { RightComponent } from './cmp/right/right.component';
 import {MatListModule} from '@angular/material/list';
 import { GradeTypePipe } from './shared/pipes/grade-type.pipe';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { GradeTypePipe } from './shared/pipes/grade-type.pipe';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
