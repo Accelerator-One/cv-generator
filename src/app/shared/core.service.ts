@@ -63,4 +63,17 @@ export class CoreService {
     this.certifications.push(data);
   }
 
+  toggleEditMode() {
+
+    this.editMode = false;
+    setTimeout(() => {
+      window.print();
+    }, 800);
+    
+    setTimeout(() => {
+      this.editMode = true;
+    }, 1600);
+
+  }
+
 }

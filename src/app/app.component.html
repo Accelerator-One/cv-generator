@@ -26,3 +26,10 @@
   </div>
 
 </div>
+
+<div class="bottom-right">
+  <button *ngIf='data?.editMode' (click)='data?.toggleEditMode()' mat-fab color='dark' aria-label="Print CV">
+    <mat-icon>print</mat-icon>
+  </button>
+</div>
+
