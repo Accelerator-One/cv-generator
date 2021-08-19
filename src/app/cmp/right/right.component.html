@@ -1,10 +1,16 @@
 <h2> Skills </h2>
 
 <ul>
+
+  <!-- Boilerplate -->
   <li> PWAs </li>
   <li> API dev </li>
   <li> Python </li>
   <li> System design </li>
+
+  <!-- Actual -->
+  <li *ngFor='let skill of data?.skills'> {{ skill }} </li>
+
 </ul>
 
 <br />
@@ -12,6 +18,12 @@
 <h2> Achievements </h2>
 
 <ul>
+
+  <!-- Boilerplate -->
   <li> Hackathon A </li>
   <li> Hackathon B </li>
+
+  <!-- Actual -->
+  <li *ngFor='let feat of data?.achievements'> {{ feat }} </li>
+
 </ul>

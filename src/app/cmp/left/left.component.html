@@ -2,6 +2,7 @@
 
 <mat-list>
 
+  <!-- Boilerplate -->
   <mat-list-item>
     <mat-icon mat-list-icon>school</mat-icon>
     <div mat-line> Chitkara University </div>
@@ -14,6 +15,13 @@
     <div mat-line> Result : 92.4% </div>
   </mat-list-item>
 
+  <!-- Actual -->
+  <mat-list-item *ngFor='let school of data?.education'>
+    <mat-icon mat-list-icon>school</mat-icon>
+    <div mat-line> {{ school?.authority }} </div>
+    <div mat-line> Result : {{ school?.score | gradeType:(school?.type) }} </div>
+  </mat-list-item>
+
 </mat-list>
 
 <br />
@@ -23,6 +31,7 @@
 
 <mat-list>
 
+  <!-- Boilerplate -->
   <mat-list-item>
     <mat-icon mat-list-icon>work</mat-icon>
     <div mat-line> Software intern - <i> SimplifyVMS </i></div>
@@ -35,6 +44,15 @@
     <div mat-line> Jan 2020 - Mar 2020 </div>
   </mat-list-item>
 
+  <!-- Actual -->
+  <mat-list-item *ngFor='let company of data?.experience'>
+    <mat-icon mat-list-icon>work</mat-icon>
+    <div mat-line> {{ company?.position }} - <i> {{ company?.company }} </i></div>
+    
+    <!-- TODO: Add 'custom' pipe for enum rendering here -->
+    <div mat-line> {{ company?.startMonth }} {{ company?.startYear }} - {{ company?.endMonth }} {{ company?.endYear }} </div>
+  </mat-list-item>
+
 </mat-list>
 
 <br />
@@ -42,8 +60,14 @@
 <h2> Certifications </h2>
 
 <ul>
+
+  <!-- Boilerplate -->
   <li> Working with Google Cloud </li>
   <li> IT automation with python </li>
+
+  <!-- Actual -->
+  <li *ngFor='let certificate of data?.certifications'> {{ certificate }} </li>
+
 </ul>
 
 <br/>

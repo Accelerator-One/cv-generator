@@ -11,6 +11,7 @@ import { AboutComponent } from './cmp/about/about.component';
 import { LeftComponent } from './cmp/left/left.component';
 import { RightComponent } from './cmp/right/right.component';
 import {MatListModule} from '@angular/material/list';
+import { GradeTypePipe } from './shared/pipes/grade-type.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {MatListModule} from '@angular/material/list';
     IntroComponent,
     AboutComponent,
     LeftComponent,
-    RightComponent
+    RightComponent,
+    GradeTypePipe
   ],
   imports: [
     BrowserModule,

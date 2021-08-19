@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoreService } from 'src/app/shared/core.service';
 
 @Component({
   selector: 'app-left',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(public data: CoreService) { }
+  
+  ngOnInit(): void { }
 
 }
