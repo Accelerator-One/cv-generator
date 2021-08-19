@@ -17,6 +17,7 @@ export class CoreService {
   public education: Array<Education>;
   public experience: Array<Experience>;
 
+  public editMode: Boolean;
   public skills: Array<String>;
   public achievements: Array<String>;
   public certifications: Array<String>;
@@ -35,6 +36,7 @@ export class CoreService {
     this.experience = [];
 
     this.skills = [];
+    this.editMode = true;
     this.achievements = [];
     this.certifications = [];
 

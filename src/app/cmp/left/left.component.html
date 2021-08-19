@@ -24,7 +24,7 @@
 
 </mat-list>
 
-<button mat-stroked-button class='spread' color="dark"> + </button>
+<button *ngIf='data?.editMode' mat-stroked-button class='spread' color="dark"> + </button>
 
 <br/>
 <br/>
@@ -57,7 +57,7 @@
 
 </mat-list>
 
-<button mat-stroked-button class='spread' color="dark"> + </button>
+<button *ngIf='data?.editMode' mat-stroked-button class='spread' color="dark"> + </button>
 
 <br />
 <br />
@@ -75,7 +75,7 @@
 
 </ul>
 
-<button mat-stroked-button class='spread' color="dark"> + </button>
+<button *ngIf='data?.editMode' mat-stroked-button class='spread' color="dark"> + </button>
 
 <br />
 <br />
