@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoreService } from 'src/app/shared/core.service';
 
 @Component({
   selector: 'app-about',
@@ -7,12 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  public about: string = '';
-
-  constructor() { }
-
-  ngOnInit(): void {
-    this.about = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, delectus eaque doloremque cupiditate sequi voluptatem quos praesentium illo provident esse quam a non iure laborum laboriosam. Fugiat magnam nulla incidunt?"
-  }
+  constructor(public data: CoreService) { }
+  ngOnInit(): void { }
 
 }
