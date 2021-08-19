@@ -11,9 +11,9 @@ interface Experience {
   position: String;
   company: String;
   startMonth: Month;
-  endMonth: Month;
+  endMonth?: Month;
   startYear: Number;
-  endYear: Number;
+  endYear?: Number;
 }
 
 export { Education, Experience };

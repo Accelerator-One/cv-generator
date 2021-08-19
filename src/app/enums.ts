@@ -1,22 +1,21 @@
 enum Type {
-  percentage,
-  percentile,
-  gpa
+  Percentage,
+  Percentile,
+  GPA
 };
 
 enum Month {
-  january,
-  february,
-  march,
-  april,
-  may,
-  june,
-  july,
-  august,
-  september,
-  october,
-  november,
-  december
+  January,
+  February,
+  March,
+  April,
+  May,
+  June,
+  July,
+  September,
+  October,
+  November,
+  December
 }
 
 export { Type, Month };
