@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +12,9 @@ import { RightComponent } from './cmp/right/right.component';
 import {MatListModule} from '@angular/material/list';
 import { GradeTypePipe } from './shared/pipes/grade-type.pipe';
 import {MatButtonModule} from '@angular/material/button';
+import { DialogComponent } from './cmp/dialog/dialog.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import {MatButtonModule} from '@angular/material/button';
     AboutComponent,
     LeftComponent,
     RightComponent,
-    GradeTypePipe
+    GradeTypePipe,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,9 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatIconModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

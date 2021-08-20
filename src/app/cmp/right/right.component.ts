@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoreService } from 'src/app/shared/core.service';
+import { DialogService } from '../dialog/dialog.service';
 
 @Component({
   selector: 'app-right',
@@ -8,7 +9,7 @@ import { CoreService } from 'src/app/shared/core.service';
 })
 export class RightComponent implements OnInit {
 
-  constructor(public data: CoreService) { }
+  constructor(public data: CoreService, public dialog: DialogService) { }
 
   ngOnInit(): void { }
 

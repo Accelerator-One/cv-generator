@@ -24,7 +24,10 @@
 
 </mat-list>
 
-<button *ngIf='data?.editMode' mat-stroked-button class='spread' color="dark"> + </button>
+<button 
+  *ngIf='data?.editMode' 
+  (click)="dialog.openDialog('education')"
+  mat-stroked-button class='spread' color="dark"> + </button>
 
 <br/>
 <br/>
@@ -57,7 +60,10 @@
 
 </mat-list>
 
-<button *ngIf='data?.editMode' mat-stroked-button class='spread' color="dark"> + </button>
+<button 
+  *ngIf='data?.editMode'
+  (click)="dialog.openDialog('experience')"  
+  mat-stroked-button class='spread' color="dark"> + </button>
 
 <br />
 <br />
@@ -75,7 +81,10 @@
 
 </ul>
 
-<button *ngIf='data?.editMode' mat-stroked-button class='spread' color="dark"> + </button>
+<button 
+  *ngIf='data?.editMode' 
+  (click)="dialog.openDialog('certs')"
+  mat-stroked-button class='spread' color="dark"> + </button>
 
 <br />
 <br />
