@@ -1,6 +1,53 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
+<span *ngIf='dialog.code === "EDU"'>
+  <h1 mat-dialog-title>Add Education</h1>
 
-<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-</div>
+  <div mat-dialog-content>Enter all the mentioned details listed below: </div>
+  <div class="space-between" mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button color='primary'>Save</button>
+  </div>
+</span>
+
+
+<span *ngIf='dialog.code === "EXP"'>
+  <h1 mat-dialog-title>Add Experience</h1>
+
+  <div mat-dialog-content>Enter all the mentioned details listed below: </div>
+  <div class="space-between" mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button color='primary'>Save</button>
+  </div>
+</span>
+
+
+<span *ngIf='dialog.code === "CER"'>
+  <h1 mat-dialog-title>Add Certification</h1>
+
+  <div mat-dialog-content>Enter all the mentioned details listed below: </div>
+  <div class="space-between" mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button color='primary'>Save</button>
+  </div>
+</span>
+
+
+<span *ngIf='dialog.code === "SKI"'>
+  <h1 mat-dialog-title>Add Skill</h1>
+
+  <div mat-dialog-content>Enter all the mentioned details listed below: </div>
+  <div class="space-between" mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button color='primary'>Save</button>
+  </div>
+</span>
+
+
+<span *ngIf='dialog.code === "ACH"'>
+  <h1 mat-dialog-title>Add Achievement</h1>
+
+  <div mat-dialog-content>Enter all the mentioned details listed below: </div>
+  <div class="space-between" mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button color='primary'>Save</button>
+  </div>
+</span>

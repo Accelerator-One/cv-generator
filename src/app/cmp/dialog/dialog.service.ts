@@ -7,11 +7,11 @@ import { DialogComponent } from './dialog.component';
 })
 export class DialogService {
 
-  private openCmp: string = '';
+  public code: string = '';
   constructor(private dialog: MatDialog) { }
 
   openDialog(name: string) {
-    this.openCmp = name;
+    this.code = name;
     this.dialog.open(DialogComponent);
   }
 
