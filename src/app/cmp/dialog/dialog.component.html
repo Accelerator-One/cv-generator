@@ -47,12 +47,17 @@
 </form>
 
 
-<form *ngIf='dialog.code === "ACH"'>
-  <h1 mat-dialog-title>Add Achievement</h1>
+<form [formGroup]='achievements' *ngIf='dialog.code === "ACH"'>
+  <h2 mat-dialog-title>Add Achievement</h2>
 
-  <div mat-dialog-content>Enter all the mentioned details listed below: </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Achievement</mat-label>
+    <input matInput placeholder="Enter details here" formControlName='achievement' required>
+    <mat-error *ngIf="achievements.invalid"> Field value cannot be empty </mat-error>
+  </mat-form-field>
+
   <div class="space-between" mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
-    <button mat-button (click)='onSave("ACH")' color='primary'>Save</button>
+    <button mat-button [disabled]='achievements.invalid' (click)='onSave("ACH")' color='primary'>Save</button>
   </div>
 </form>

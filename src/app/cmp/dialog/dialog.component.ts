@@ -22,6 +22,16 @@ export class DialogComponent {
     this.data.addSkill(value);
   }
 
+  // Achievements
+  public achievements = new FormGroup({
+    achievement: new FormControl('', [Validators.required])
+  });
+
+  addAchievement() {
+    const value = this.achievements.get('achievement')?.value;
+    this.data.addAchievement(value);
+  }
+
   onSave(code: string) {
 
     switch(code) {
@@ -43,7 +53,7 @@ export class DialogComponent {
         break;
 
       case 'ACH':
-        console.log('ACH');
+        this.addAchievement();
         break;
 
       default:
