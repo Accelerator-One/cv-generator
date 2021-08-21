@@ -42,17 +42,44 @@ export class DialogComponent {
     this.data.addCertification(value);
   }
 
+  // Experience
+  public experience = new FormGroup({
+    position: new FormControl('',[Validators.required]),
+    company: new FormControl('', [Validators.required]),
+    startMonth: new FormControl(Date().split(' ')[1], [Validators.required]),
+    endMonth: new FormControl(Date().split(' ')[1]),
+    startYear: new FormControl(parseInt(Date().split(' ')[3]), [Validators.required]),
+    endYear: new FormControl(parseInt(Date().split(' ')[3]))
+  });
+
+  addExperience() {
+    const value = this.experience.value;
+    console.log(value);
+  }
+
+  // Education
+  public education = new FormGroup({
+    authority: new FormControl('', [Validators.required]),
+    score: new FormControl(0, [Validators.required]),
+    type: new FormControl('', [Validators.required]),
+    total: new FormControl(0)
+  });
+
+  addEducation() {
+    const value = this.education.value;
+    console.log(value);
+  }
 
   onSave(code: string) {
 
     switch(code) {
 
       case 'EDU':
-        console.log('EDU');
+        this.addEducation();
         break;
 
       case 'EXP':
-        console.log('EXP');
+        this.addExperience();
         break;
 
       case 'CER':
