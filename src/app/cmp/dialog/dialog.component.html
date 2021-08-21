@@ -20,13 +20,18 @@
 </form>
 
 
-<form *ngIf='dialog.code === "CER"'>
-  <h1 mat-dialog-title>Add Certification</h1>
+<form [formGroup]='certifications' *ngIf='dialog.code === "CER"'>
+  <h2 mat-dialog-title>Add Certification</h2>
 
-  <div mat-dialog-content>Enter all the mentioned details listed below: </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Certification Name</mat-label>
+    <input matInput placeholder="Enter value here" formControlName='certificate' required>
+    <mat-error *ngIf="certifications.invalid"> Field value cannot be empty </mat-error>
+  </mat-form-field>
+
   <div class="space-between" mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
-    <button mat-button (click)='onSave("CER")' color='primary'>Save</button>
+    <button mat-button [disabled]='certifications.invalid' (click)='onSave("CER")' color='primary'>Save</button>
   </div>
 </form>
 

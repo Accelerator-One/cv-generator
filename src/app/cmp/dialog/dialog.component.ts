@@ -32,6 +32,17 @@ export class DialogComponent {
     this.data.addAchievement(value);
   }
 
+  // Certifications
+  public certifications = new FormGroup({
+    certificate: new FormControl('', [Validators.required])
+  })
+
+  addCertification() {
+    const value = this.certifications.get('certificate')?.value;
+    this.data.addCertification(value);
+  }
+
+
   onSave(code: string) {
 
     switch(code) {
@@ -45,7 +56,7 @@ export class DialogComponent {
         break;
 
       case 'CER':
-        console.log('CER');
+        this.addCertification();
         break;
 
       case 'SKI':
