@@ -1,53 +1,58 @@
-<span *ngIf='dialog.code === "EDU"'>
+<form *ngIf='dialog.code === "EDU"'>
   <h1 mat-dialog-title>Add Education</h1>
 
   <div mat-dialog-content>Enter all the mentioned details listed below: </div>
   <div class="space-between" mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
-    <button mat-button (click)='dialog?.onSave()' color='primary'>Save</button>
+    <button mat-button (click)='onSave("EDU")' color='primary'>Save</button>
   </div>
-</span>
+</form>
 
 
-<span *ngIf='dialog.code === "EXP"'>
+<form *ngIf='dialog.code === "EXP"'>
   <h1 mat-dialog-title>Add Experience</h1>
 
   <div mat-dialog-content>Enter all the mentioned details listed below: </div>
   <div class="space-between" mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
-    <button mat-button (click)='dialog?.onSave()' color='primary'>Save</button>
+    <button mat-button (click)='onSave("EXP")' color='primary'>Save</button>
   </div>
-</span>
+</form>
 
 
-<span *ngIf='dialog.code === "CER"'>
+<form *ngIf='dialog.code === "CER"'>
   <h1 mat-dialog-title>Add Certification</h1>
 
   <div mat-dialog-content>Enter all the mentioned details listed below: </div>
   <div class="space-between" mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
-    <button mat-button (click)='dialog?.onSave()' color='primary'>Save</button>
+    <button mat-button (click)='onSave("CER")' color='primary'>Save</button>
   </div>
-</span>
+</form>
 
 
-<span *ngIf='dialog.code === "SKI"'>
-  <h1 mat-dialog-title>Add Skill</h1>
+<form [formGroup]='skills' *ngIf='dialog.code === "SKI"'>
+  <h2 mat-dialog-title>Add Skill</h2>
 
-  <div mat-dialog-content>Enter all the mentioned details listed below: </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Skill Name</mat-label>
+    <input matInput placeholder="Enter value here" formControlName='skill' required>
+    <mat-error *ngIf="skills.invalid"> Field value cannot be empty </mat-error>
+  </mat-form-field>
+
   <div class="space-between" mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
-    <button mat-button (click)='dialog?.onSave()' color='primary'>Save</button>
+    <button mat-button [disabled]='skills.invalid' (click)='onSave("SKI")' color='primary'>Save</button>
   </div>
-</span>
+</form>
 
 
-<span *ngIf='dialog.code === "ACH"'>
+<form *ngIf='dialog.code === "ACH"'>
   <h1 mat-dialog-title>Add Achievement</h1>
 
   <div mat-dialog-content>Enter all the mentioned details listed below: </div>
   <div class="space-between" mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
-    <button mat-button (click)='dialog?.onSave()' color='primary'>Save</button>
+    <button mat-button (click)='onSave("ACH")' color='primary'>Save</button>
   </div>
-</span>
+</form>
