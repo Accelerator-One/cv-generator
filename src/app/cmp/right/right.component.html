@@ -2,13 +2,7 @@
 
 <ul>
 
-  <!-- Boilerplate -->
-  <li> PWAs </li>
-  <li> API dev </li>
-  <li> Python </li>
-  <li> System design </li>
-
-  <!-- Actual -->
+  <!-- Rendering template -->
   <li *ngFor='let skill of data?.skills'> {{ skill }} </li>
 
 </ul>
@@ -25,11 +19,7 @@
 
 <ul>
 
-  <!-- Boilerplate -->
-  <li> Hackathon A </li>
-  <li> Hackathon B </li>
-
-  <!-- Actual -->
+  <!-- Rendering template -->
   <li *ngFor='let feat of data?.achievements'> {{ feat }} </li>
 
 </ul>
