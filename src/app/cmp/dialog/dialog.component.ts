@@ -56,14 +56,23 @@ export class DialogComponent implements OnInit {
     position: new FormControl('',[Validators.required]),
     company: new FormControl('', [Validators.required]),
     startMonth: new FormControl(null, [Validators.required]),
-    endMonth: new FormControl(null),
+    endMonth: new FormControl(''),
     startYear: new FormControl(null, [Validators.required]),
-    endYear: new FormControl(null)
+    endYear: new FormControl('')
   });
 
   addExperience() {
-    const value = this.experience.value;
-    console.log(value);
+
+    let value = this.experience.value;
+    value['startMonth'] = this.months[value['startMonth']]?.slice(0,3);
+    value['endMonth'] = this.months[value['endMonth']]?.slice(0,3);
+    if(this.present) {
+      delete value.endMonth;
+      delete value.endYear;
+    }
+
+    this.data.addExperience(value);
+    
   }
 
   // Education

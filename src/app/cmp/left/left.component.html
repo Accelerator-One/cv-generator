@@ -24,46 +24,30 @@
 
 </mat-list>
 
-<button 
-  *ngIf='data?.editMode' 
-  (click)="dialog.openDialog('EDU')"
-  mat-stroked-button class='spread' color="dark"> + </button>
+<button *ngIf='data?.editMode' (click)="dialog.openDialog('EDU')" mat-stroked-button class='spread' color="dark"> +
+</button>
 
-<br/>
-<br/>
+<br />
+<br />
 
 <h2> Experience </h2>
 
 <mat-list>
 
-  <!-- Boilerplate -->
-  <mat-list-item>
-    <mat-icon mat-list-icon>work</mat-icon>
-    <div mat-line> Software intern - <i> SimplifyVMS </i></div>
-    <div mat-line class='secondary'> May 2021 - May 2022 </div>
-  </mat-list-item>
-
-  <mat-list-item>
-    <mat-icon mat-list-icon>work</mat-icon>
-    <div mat-line> Technical Writer - <i> GeeksforGeeks </i></div>
-    <div mat-line> Jan 2020 - Mar 2020 </div>
-  </mat-list-item>
-
-  <!-- Actual -->
+  <!-- Rendering template -->
   <mat-list-item *ngFor='let company of data?.experience'>
     <mat-icon mat-list-icon>work</mat-icon>
     <div mat-line> {{ company?.position }} - <i> {{ company?.company }} </i></div>
-    
-    <!-- TODO: Add 'custom' pipe for enum rendering here -->
-    <div mat-line> {{ company?.startMonth }} {{ company?.startYear }} - {{ company?.endMonth }} {{ company?.endYear }} </div>
+    <div *ngIf='company.endMonth' mat-line> {{ company?.startMonth }} {{ company?.startYear }} - {{ company?.endMonth }}
+      {{ company?.endYear }} </div>
+    <div *ngIf='!company.endMonth' mat-line> {{ company?.startMonth }} {{ company?.startYear }} - <i>Present</i> </div>
+
   </mat-list-item>
 
 </mat-list>
 
-<button 
-  *ngIf='data?.editMode'
-  (click)="dialog.openDialog('EXP')"  
-  mat-stroked-button class='spread' color="dark"> + </button>
+<button *ngIf='data?.editMode' (click)="dialog.openDialog('EXP')" mat-stroked-button class='spread' color="dark"> +
+</button>
 
 <br />
 <br />
@@ -77,10 +61,8 @@
 
 </ul>
 
-<button 
-  *ngIf='data?.editMode' 
-  (click)="dialog.openDialog('CER')"
-  mat-stroked-button class='spread' color="dark"> + </button>
+<button *ngIf='data?.editMode' (click)="dialog.openDialog('CER')" mat-stroked-button class='spread' color="dark"> +
+</button>
 
 <br />
 <br />

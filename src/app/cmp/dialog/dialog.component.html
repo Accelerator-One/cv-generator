@@ -49,7 +49,7 @@
       <mat-select required formControlName='startYear'>
         <mat-option
          *ngFor='let year of years;' 
-         [value]='years'>
+         [value]='year'>
           {{ year }} 
         </mat-option>
       </mat-select>
@@ -69,7 +69,7 @@
   <div class="end-exp" *ngIf='!present'>
     
       <mat-form-field appearance="fill">
-        <mat-label>Start month</mat-label>
+        <mat-label>End month</mat-label>
         <mat-select formControlName='endMonth'>
           <mat-option
            *ngFor='let month of months; index as it' 
@@ -86,7 +86,7 @@
         <mat-select formControlName='endYear'>
           <mat-option
            *ngFor='let year of years;' 
-           [value]='years'>
+           [value]='year'>
             {{ year }} 
           </mat-option>
         </mat-select>
