@@ -9,13 +9,48 @@
 </form>
 
 
-<form *ngIf='dialog.code === "EXP"'>
-  <h1 mat-dialog-title>Add Experience</h1>
+<form [formGroup]='experience' *ngIf='dialog.code === "EXP"'>
+  <h2 mat-dialog-title>Add Experience</h2>
 
-  <div mat-dialog-content>Enter all the mentioned details listed below: </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Organization</mat-label>
+    <input matInput placeholder="Enter organization name" formControlName='company' required>
+    <mat-error *ngIf="this.experience.controls.company.invalid"> Field cannot be empty </mat-error>
+  </mat-form-field>
+
+  &nbsp;
+
+  <mat-form-field appearance="fill">
+    <mat-label>Designation</mat-label>
+    <input matInput placeholder="Enter position details" formControlName='position' required>
+    <mat-error *ngIf="this.experience.controls.position.invalid"> Field cannot be empty </mat-error>
+  </mat-form-field>
+
+  <br/>
+  <br/>
+
+  <div>
+    Enter START metadata
+  </div>
+
+  <br/>
+
+  <mat-checkbox [checked]='present' (change)="present=!present">
+    I'm currently working at this role
+  </mat-checkbox>
+
+  <br/>
+  <br/>
+
+  <div *ngIf='!present'>
+    Enter END metadata
+  </div>
+
+  <br/>
+
   <div class="space-between" mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
-    <button mat-button (click)='onSave("EXP")' color='primary'>Save</button>
+    <button mat-button [disabled]='experience.invalid' (click)='onSave("EXP")' color='primary'>Save</button>
   </div>
 </form>
 

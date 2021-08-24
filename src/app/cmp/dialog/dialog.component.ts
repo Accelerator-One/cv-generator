@@ -43,6 +43,7 @@ export class DialogComponent {
   }
 
   // Experience
+  public present: boolean = false;
   public experience = new FormGroup({
     position: new FormControl('',[Validators.required]),
     company: new FormControl('', [Validators.required]),
