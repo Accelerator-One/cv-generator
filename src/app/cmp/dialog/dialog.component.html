@@ -29,8 +29,32 @@
   <br/>
   <br/>
 
-  <div>
-    Enter START metadata
+  <div class='start-exp'>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Start month</mat-label>
+      <mat-select required formControlName='startMonth'>
+        <mat-option
+         *ngFor='let month of months; index as it' 
+         [value]='it'>
+          {{ month }} 
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    &nbsp;
+
+    <mat-form-field appearance="fill">
+      <mat-label>Start year</mat-label>
+      <mat-select required formControlName='startYear'>
+        <mat-option
+         *ngFor='let year of years;' 
+         [value]='years'>
+          {{ year }} 
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
   </div>
 
   <br/>
@@ -42,8 +66,32 @@
   <br/>
   <br/>
 
-  <div *ngIf='!present'>
-    Enter END metadata
+  <div class="end-exp" *ngIf='!present'>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Start month</mat-label>
+        <mat-select formControlName='endMonth'>
+          <mat-option
+           *ngFor='let month of months; index as it' 
+           [value]='it'>
+            {{ month }} 
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      &nbsp;
+  
+      <mat-form-field appearance="fill">
+        <mat-label>End year</mat-label>
+        <mat-select formControlName='endYear'>
+          <mat-option
+           *ngFor='let year of years;' 
+           [value]='years'>
+            {{ year }} 
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
   </div>
 
   <br/>

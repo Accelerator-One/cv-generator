@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CoreService } from 'src/app/shared/core.service';
 import { DialogService } from './dialog.service';
@@ -8,7 +8,7 @@ import { DialogService } from './dialog.service';
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss']
 })
-export class DialogComponent {
+export class DialogComponent implements OnInit {
 
   constructor(public dialog: DialogService, public data: CoreService) {}
 
@@ -44,13 +44,21 @@ export class DialogComponent {
 
   // Experience
   public present: boolean = false;
+  public years: Array <Number> = [];
+  public months: Array <string> = [
+    'January', 'February', 'March', 
+    'April', 'May', 'June', 
+    'July', 'August', 'September',
+    'October', 'November', 'December'
+  ];
+
   public experience = new FormGroup({
     position: new FormControl('',[Validators.required]),
     company: new FormControl('', [Validators.required]),
-    startMonth: new FormControl(Date().split(' ')[1], [Validators.required]),
-    endMonth: new FormControl(Date().split(' ')[1]),
-    startYear: new FormControl(parseInt(Date().split(' ')[3]), [Validators.required]),
-    endYear: new FormControl(parseInt(Date().split(' ')[3]))
+    startMonth: new FormControl(null, [Validators.required]),
+    endMonth: new FormControl(null),
+    startYear: new FormControl(null, [Validators.required]),
+    endYear: new FormControl(null)
   });
 
   addExperience() {
@@ -103,6 +111,12 @@ export class DialogComponent {
 
     this.dialog?.closeDialog();
 
+  }
+
+  ngOnInit() {
+    let curr_year = parseInt(Date().split(' ')[3]);
+    for (let it = -50; it <= 50; it++)
+      this.years.push(it + curr_year);
   }
 
 }
