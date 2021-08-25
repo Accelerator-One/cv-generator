@@ -6,10 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class GradeTypePipe implements PipeTransform {
 
   transform(value: unknown, ...args: unknown[]): unknown {
-    
-    // TODO: Add logic for grade type
-    // console.log(value, args);
-    
-    return value;
+
+    const type = args[0];
+    if (type === 0)
+      return "CGPA : " + value;
+
+    return "Result : " + value + '%';
+
   }
 }

@@ -10,7 +10,7 @@ import { DialogService } from './dialog.service';
 })
 export class DialogComponent implements OnInit {
 
-  constructor(public dialog: DialogService, public data: CoreService) {}
+  constructor(public dialog: DialogService, public data: CoreService) { }
 
   // Skills
   public skills = new FormGroup({
@@ -44,16 +44,16 @@ export class DialogComponent implements OnInit {
 
   // Experience
   public present: boolean = false;
-  public years: Array <Number> = [];
-  public months: Array <string> = [
-    'January', 'February', 'March', 
-    'April', 'May', 'June', 
+  public years: Array<Number> = [];
+  public months: Array<string> = [
+    'January', 'February', 'March',
+    'April', 'May', 'June',
     'July', 'August', 'September',
     'October', 'November', 'December'
   ];
 
   public experience = new FormGroup({
-    position: new FormControl('',[Validators.required]),
+    position: new FormControl('', [Validators.required]),
     company: new FormControl('', [Validators.required]),
     startMonth: new FormControl(null, [Validators.required]),
     endMonth: new FormControl(''),
@@ -64,33 +64,33 @@ export class DialogComponent implements OnInit {
   addExperience() {
 
     let value = this.experience.value;
-    value['startMonth'] = this.months[value['startMonth']]?.slice(0,3);
-    value['endMonth'] = this.months[value['endMonth']]?.slice(0,3);
-    if(this.present) {
+    value['startMonth'] = this.months[value['startMonth']]?.slice(0, 3);
+    value['endMonth'] = this.months[value['endMonth']]?.slice(0, 3);
+    if (this.present) {
       delete value.endMonth;
       delete value.endYear;
     }
 
     this.data.addExperience(value);
-    
+
   }
 
   // Education
+  public ctypes: Array<string> = ['CGPA', 'Percentage'];
   public education = new FormGroup({
     authority: new FormControl('', [Validators.required]),
-    score: new FormControl(0, [Validators.required]),
+    score: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{1,2}((\.[0-9]{1,})||())$')]),
     type: new FormControl('', [Validators.required]),
-    total: new FormControl(0)
   });
 
   addEducation() {
-    const value = this.education.value;
-    console.log(value);
+    let value = this.education.value;
+    this.data.addEducation(value);
   }
 
   onSave(code: string) {
 
-    switch(code) {
+    switch (code) {
 
       case 'EDU':
         this.addEducation();
@@ -115,7 +115,7 @@ export class DialogComponent implements OnInit {
       default:
         console.error('Incorrect specified option provided');
         break;
-      
+
     }
 
     this.dialog?.closeDialog();

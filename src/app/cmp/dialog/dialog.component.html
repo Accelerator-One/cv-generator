@@ -1,10 +1,36 @@
-<form *ngIf='dialog.code === "EDU"'>
-  <h1 mat-dialog-title>Add Education</h1>
+<form [formGroup]='education' *ngIf='dialog.code === "EDU"'>
+  <h2 mat-dialog-title>Add Education</h2>
 
-  <div mat-dialog-content>Enter all the mentioned details listed below: </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Institute</mat-label>
+    <input matInput placeholder="Institute name" formControlName='authority' required>
+    <mat-error *ngIf="this.education.controls.authority"> Field cannot be empty </mat-error>
+  </mat-form-field>
+
+  <br />
+  <br />
+
+  <mat-form-field appearance="fill">
+    <mat-label>Credential Type</mat-label>
+    <mat-select required formControlName='type'>
+      <mat-option *ngFor='let type of ctypes; index as it' [value]='it'>
+        {{ type }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br />
+  <h4> Merit details </h4>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Score</mat-label>
+    <input matInput formControlName='score' placeholder="Enter result" required>
+    <mat-error *ngIf="this.education.controls.score.invalid"> Invalid value entered </mat-error>
+  </mat-form-field>
+
   <div class="space-between" mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
-    <button mat-button (click)='onSave("EDU")' color='primary'>Save</button>
+    <button mat-button [disabled]='education.invalid' (click)='onSave("EDU")' color='primary'>Save</button>
   </div>
 </form>
 
@@ -26,18 +52,16 @@
     <mat-error *ngIf="this.experience.controls.position.invalid"> Field cannot be empty </mat-error>
   </mat-form-field>
 
-  <br/>
-  <br/>
+  <br />
+  <br />
 
   <div class='start-exp'>
 
     <mat-form-field appearance="fill">
       <mat-label>Start month</mat-label>
       <mat-select required formControlName='startMonth'>
-        <mat-option
-         *ngFor='let month of months; index as it' 
-         [value]='it'>
-          {{ month }} 
+        <mat-option *ngFor='let month of months; index as it' [value]='it'>
+          {{ month }}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -47,54 +71,48 @@
     <mat-form-field appearance="fill">
       <mat-label>Start year</mat-label>
       <mat-select required formControlName='startYear'>
-        <mat-option
-         *ngFor='let year of years;' 
-         [value]='year'>
-          {{ year }} 
+        <mat-option *ngFor='let year of years;' [value]='year'>
+          {{ year }}
         </mat-option>
       </mat-select>
     </mat-form-field>
 
   </div>
 
-  <br/>
+  <br />
 
   <mat-checkbox [checked]='present' (change)="present=!present">
     I'm currently working at this role
   </mat-checkbox>
 
-  <br/>
-  <br/>
+  <br />
+  <br />
 
   <div class="end-exp" *ngIf='!present'>
-    
-      <mat-form-field appearance="fill">
-        <mat-label>End month</mat-label>
-        <mat-select formControlName='endMonth'>
-          <mat-option
-           *ngFor='let month of months; index as it' 
-           [value]='it'>
-            {{ month }} 
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-  
-      &nbsp;
-  
-      <mat-form-field appearance="fill">
-        <mat-label>End year</mat-label>
-        <mat-select formControlName='endYear'>
-          <mat-option
-           *ngFor='let year of years;' 
-           [value]='year'>
-            {{ year }} 
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-  
+
+    <mat-form-field appearance="fill">
+      <mat-label>End month</mat-label>
+      <mat-select formControlName='endMonth'>
+        <mat-option *ngFor='let month of months; index as it' [value]='it'>
+          {{ month }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    &nbsp;
+
+    <mat-form-field appearance="fill">
+      <mat-label>End year</mat-label>
+      <mat-select formControlName='endYear'>
+        <mat-option *ngFor='let year of years;' [value]='year'>
+          {{ year }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
   </div>
 
-  <br/>
+  <br />
 
   <div class="space-between" mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>

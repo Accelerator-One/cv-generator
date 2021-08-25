@@ -2,24 +2,11 @@
 
 <mat-list>
 
-  <!-- Boilerplate -->
-  <mat-list-item>
-    <mat-icon mat-list-icon>school</mat-icon>
-    <div mat-line> Chitkara University </div>
-    <div mat-line class='secondary'> GPA : 9.* </div>
-  </mat-list-item>
-
-  <mat-list-item>
-    <mat-icon mat-list-icon>school</mat-icon>
-    <div mat-line> Geeta Adarsh Vidyalaya </div>
-    <div mat-line> Result : 92.4% </div>
-  </mat-list-item>
-
-  <!-- Actual -->
+  <!-- Rendering template -->
   <mat-list-item *ngFor='let school of data?.education'>
     <mat-icon mat-list-icon>school</mat-icon>
     <div mat-line> {{ school?.authority }} </div>
-    <div mat-line> Result : {{ school?.score | gradeType:(school?.type) }} </div>
+    <div mat-line> {{ school?.score | gradeType:(school?.type) }} </div>
   </mat-list-item>
 
 </mat-list>
