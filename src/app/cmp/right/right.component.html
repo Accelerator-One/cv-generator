@@ -27,3 +27,15 @@
 
 <br />
 <br />
+
+<h2> Certifications </h2>
+
+<button *ngIf='data?.editMode' (click)="dialog.openDialog('CER')" mat-stroked-button class='spread' color="dark"> +
+</button>
+
+<ul>
+  <!-- Rendering template -->
+  <app-rm-panel size='small' *ngFor='let certificate of data?.certifications; index as it' (close)='deleteCertificate(it)'>
+    <li style='padding-left: 20px;' *ngFor='let certificate of data?.certifications'> {{ certificate }} </li>
+  </app-rm-panel>
+</ul>

@@ -30,7 +30,14 @@
   <app-rm-panel *ngFor='let company of data?.experience; index as it' (close)='deleteExperience(it)'>
   <mat-list-item>
       <mat-icon mat-list-icon>work</mat-icon>
-      <div mat-line> {{ company?.position }} - <i> {{ company?.company }} </i></div>
+      <div mat-line> {{ company?.position }}
+        <ng-container *ngIf="(company.position.length >16 || company.company.length > 16)">
+          <br/>
+        </ng-container>
+        <ng-container *ngIf="!(company.position.length >16 || company.company.length > 16)">
+          -
+        </ng-container>
+        <i> {{ company?.company }} </i></div>
       <div *ngIf='company.endMonth' mat-line> {{ company?.startMonth }} {{ company?.startYear }} - {{ company?.endMonth }}
         {{ company?.endYear }} </div>
       <div *ngIf='!company.endMonth' mat-line> {{ company?.startMonth }} {{ company?.startYear }} - <i>Present</i> </div>
@@ -38,19 +45,6 @@
   </app-rm-panel>
 
 </mat-list>
-
-<br />
-<br />
-
-<h2> Certifications </h2>
-
-<button *ngIf='data?.editMode' (click)="dialog.openDialog('CER')" mat-stroked-button class='spread' color="dark"> +
-</button>
-
-<ul>
-  <!-- Rendering template -->
-  <li *ngFor='let certificate of data?.certifications'> {{ certificate }} </li>
-</ul>
 
 <br />
 <br />

@@ -20,4 +20,7 @@ export class RightComponent implements OnInit {
     this.data.skills = this.data.skills.filter((val, it) => (index !== it));
   }
 
+  deleteCertificate(index: number) {
+    this.data.certifications = this.data.certifications.filter((val, it) => (it !== index));
+  }
 }
