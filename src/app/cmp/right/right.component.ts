@@ -16,4 +16,8 @@ export class RightComponent implements OnInit {
     this.data.achievements = this.data.achievements.filter((val, it) => (index !== it));
   }
 
+  deleteSkill(index: number) {
+    this.data.skills = this.data.skills.filter((val, it) => (index !== it));
+  }
+
 }

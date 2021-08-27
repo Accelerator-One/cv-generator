@@ -1,14 +1,14 @@
 <h2> Skills </h2>
 
-<ul>
-
-  <!-- Rendering template -->
-  <li *ngFor='let skill of data?.skills'> {{ skill }} </li>
-
-</ul>
-
 <button *ngIf='data?.editMode' (click)="dialog.openDialog('SKI')" mat-stroked-button class='spread' color="dark"> +
 </button>
+
+<ul>
+  <!-- Rendering template -->
+  <app-rm-panel *ngFor='let skill of data?.skills; index as it' (close)='deleteSkill(it)'>
+    <li> {{ skill }} </li>
+  </app-rm-panel>
+</ul>
 
 <br />
 <br />
