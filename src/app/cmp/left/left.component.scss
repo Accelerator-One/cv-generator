@@ -15,8 +15,13 @@ div[mat-line] {
 ul {
   line-height: 2;
   color: $primary-normal;
+  padding-left: 0px !important;
 }
 
 .spread {
-  width: 240px;
+  width: 280px;
+}
+
+button {
+  margin-bottom: 0.5em;
 }

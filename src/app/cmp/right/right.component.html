@@ -5,7 +5,7 @@
 
 <ul>
   <!-- Rendering template -->
-  <app-rm-panel *ngFor='let skill of data?.skills; index as it' (close)='deleteSkill(it)'>
+  <app-rm-panel size='small' *ngFor='let skill of data?.skills; index as it' (close)='deleteSkill(it)'>
     <li> {{ skill }} </li>
   </app-rm-panel>
 </ul>
@@ -20,7 +20,7 @@
 
 <ul>
   <!-- Rendering template -->
-  <app-rm-panel *ngFor='let feat of data?.achievements; index as it' (close)='deleteAchievement(it)'>
+  <app-rm-panel size='small' *ngFor='let feat of data?.achievements; index as it' (close)='deleteAchievement(it)'>
     <li> {{ feat }} </li>
   </app-rm-panel>
 </ul>

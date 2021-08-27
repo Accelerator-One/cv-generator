@@ -1,23 +1,28 @@
 <h2> Education </h2>
 
+<button *ngIf='data?.editMode' (click)="dialog.openDialog('EDU')" mat-stroked-button class='spread' color="dark"> +
+</button>
+
 <mat-list>
 
   <!-- Rendering template -->
-  <mat-list-item *ngFor='let school of data?.education'>
-    <mat-icon mat-list-icon>school</mat-icon>
-    <div mat-line> {{ school?.authority }} </div>
-    <div mat-line> {{ school?.score | gradeType:(school?.type) }} </div>
-  </mat-list-item>
+  <app-rm-panel *ngFor='let school of data?.education; index as it' (close)='deleteEducation(it)'>
+    <mat-list-item>
+      <mat-icon mat-list-icon>school</mat-icon>
+      <div mat-line> {{ school?.authority }} </div>
+      <div mat-line> {{ school?.score | gradeType:(school?.type) }} </div>
+    </mat-list-item>
+  </app-rm-panel>
 
 </mat-list>
-
-<button *ngIf='data?.editMode' (click)="dialog.openDialog('EDU')" mat-stroked-button class='spread' color="dark"> +
-</button>
 
 <br />
 <br />
 
 <h2> Experience </h2>
+
+<button *ngIf='data?.editMode' (click)="dialog.openDialog('EXP')" mat-stroked-button class='spread' color="dark"> +
+</button>
 
 <mat-list>
 
@@ -33,23 +38,18 @@
 
 </mat-list>
 
-<button *ngIf='data?.editMode' (click)="dialog.openDialog('EXP')" mat-stroked-button class='spread' color="dark"> +
-</button>
-
 <br />
 <br />
 
 <h2> Certifications </h2>
 
-<ul>
-
-  <!-- Rendering template -->
-  <li *ngFor='let certificate of data?.certifications'> {{ certificate }} </li>
-
-</ul>
-
 <button *ngIf='data?.editMode' (click)="dialog.openDialog('CER')" mat-stroked-button class='spread' color="dark"> +
 </button>
+
+<ul>
+  <!-- Rendering template -->
+  <li *ngFor='let certificate of data?.certifications'> {{ certificate }} </li>
+</ul>
 
 <br />
 <br />

@@ -10,7 +10,10 @@ import { DialogService } from '../dialog/dialog.service';
 export class LeftComponent implements OnInit {
 
   constructor(public data: CoreService, public dialog: DialogService) { }
-  
   ngOnInit(): void { }
+
+  deleteEducation(index: number) {
+    this.data.education = this.data.education.filter((val, it) => (it !== index));
+  }
 
 }

@@ -1,4 +1,6 @@
-<div class='space-between' (mouseenter)='hover=true' (mouseleave)='hover=false'>
+<div class='space-between' [ngClass]="{
+    'large': (size === 'large')
+  }" (mouseenter)='hover=true' (mouseleave)='hover=false'>
 
   <div class='content'>
     <ng-content>

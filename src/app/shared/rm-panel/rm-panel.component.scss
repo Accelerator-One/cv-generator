@@ -1,10 +1,14 @@
 .space-between {
-  width: 100%;
+  width: 180px;
   display: flex;
   min-height: 1.2em;
   justify-content: space-between;
   padding: 0.4em 1em 0.4em 2em;
   border-radius: 8px;
+}
+
+.large {
+  width: 240px !important;
 }
 
 .space-between:hover {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
 @Component({
@@ -11,6 +11,7 @@ export class RmPanelComponent implements OnInit {
   constructor() { }
   ngOnInit(): void { }
 
+  @Input('size') size: string = 'large';
   @Output('close') close = new EventEmitter();
   public hover: boolean = false;
 
