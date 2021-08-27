@@ -27,14 +27,15 @@
 <mat-list>
 
   <!-- Rendering template -->
-  <mat-list-item *ngFor='let company of data?.experience'>
-    <mat-icon mat-list-icon>work</mat-icon>
-    <div mat-line> {{ company?.position }} - <i> {{ company?.company }} </i></div>
-    <div *ngIf='company.endMonth' mat-line> {{ company?.startMonth }} {{ company?.startYear }} - {{ company?.endMonth }}
-      {{ company?.endYear }} </div>
-    <div *ngIf='!company.endMonth' mat-line> {{ company?.startMonth }} {{ company?.startYear }} - <i>Present</i> </div>
-
-  </mat-list-item>
+  <app-rm-panel *ngFor='let company of data?.experience; index as it' (close)='deleteExperience(it)'>
+  <mat-list-item>
+      <mat-icon mat-list-icon>work</mat-icon>
+      <div mat-line> {{ company?.position }} - <i> {{ company?.company }} </i></div>
+      <div *ngIf='company.endMonth' mat-line> {{ company?.startMonth }} {{ company?.startYear }} - {{ company?.endMonth }}
+        {{ company?.endYear }} </div>
+      <div *ngIf='!company.endMonth' mat-line> {{ company?.startMonth }} {{ company?.startYear }} - <i>Present</i> </div>
+    </mat-list-item>
+  </app-rm-panel>
 
 </mat-list>
 

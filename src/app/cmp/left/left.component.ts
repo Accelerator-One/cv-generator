@@ -16,4 +16,8 @@ export class LeftComponent implements OnInit {
     this.data.education = this.data.education.filter((val, it) => (it !== index));
   }
 
+  deleteExperience(index: number) {
+    this.data.experience = this.data.experience.filter((val, it) => (it !== index));
+  }
+
 }
