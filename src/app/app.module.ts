@@ -9,16 +9,17 @@ import { IntroComponent } from './cmp/intro/intro.component';
 import { AboutComponent } from './cmp/about/about.component';
 import { LeftComponent } from './cmp/left/left.component';
 import { RightComponent } from './cmp/right/right.component';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { GradeTypePipe } from './shared/pipes/grade-type.pipe';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { DialogComponent } from './cmp/dialog/dialog.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { RmPanelComponent } from './shared/rm-panel/rm-panel.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     LeftComponent,
     RightComponent,
     GradeTypePipe,
-    DialogComponent
+    DialogComponent,
+    RmPanelComponent
   ],
   imports: [
     BrowserModule,

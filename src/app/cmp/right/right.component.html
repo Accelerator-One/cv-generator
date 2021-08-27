@@ -7,27 +7,23 @@
 
 </ul>
 
-<button 
-  *ngIf='data?.editMode' 
-  (click)="dialog.openDialog('SKI')"
-  mat-stroked-button class='spread' color="dark"> + </button>
+<button *ngIf='data?.editMode' (click)="dialog.openDialog('SKI')" mat-stroked-button class='spread' color="dark"> +
+</button>
 
 <br />
 <br />
 
 <h2> Achievements </h2>
 
+<button *ngIf='data?.editMode' (click)="dialog.openDialog('ACH')" mat-stroked-button class='spread' color="dark"> +
+</button>
+
 <ul>
-
   <!-- Rendering template -->
-  <li *ngFor='let feat of data?.achievements'> {{ feat }} </li>
-
+  <app-rm-panel *ngFor='let feat of data?.achievements; index as it' (close)='deleteAchievement(it)'>
+    <li> {{ feat }} </li>
+  </app-rm-panel>
 </ul>
-
-<button 
-  *ngIf='data?.editMode' 
-  (click)="dialog.openDialog('ACH')" 
-  mat-stroked-button class='spread' color="dark"> + </button>
 
 <br />
 <br />

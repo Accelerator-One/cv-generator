@@ -1,0 +1,17 @@
+.space-between {
+  width: 100%;
+  display: flex;
+  min-height: 1.2em;
+  justify-content: space-between;
+  padding: 0.4em 1em 0.4em 2em;
+  border-radius: 8px;
+}
+
+.space-between:hover {
+  background-color: #fafbfc;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 1.2em;
+}

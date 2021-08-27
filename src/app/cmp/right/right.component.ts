@@ -10,7 +10,10 @@ import { DialogService } from '../dialog/dialog.service';
 export class RightComponent implements OnInit {
 
   constructor(public data: CoreService, public dialog: DialogService) { }
-
   ngOnInit(): void { }
+
+  deleteAchievement(index: number) {
+    this.data.achievements = this.data.achievements.filter((val, it) => (index !== it));
+  }
 
 }
