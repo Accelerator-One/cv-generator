@@ -240,3 +240,20 @@
     <button mat-button [disabled]='URL.invalid' (click)='onSave("URL")' color='primary'>Save</button>
   </div>
 </form>
+
+
+<form [formGroup]='about' *ngIf='dialog.code === "ABOUT"'>
+  <h2 mat-dialog-title>Edit About</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>About me</mat-label>
+    <textarea matInput rows="2" placeholder="Write about yourself here..." formControlName='about' required>
+      </textarea>
+    <mat-error *ngIf="about.invalid"> Field value cannot be empty </mat-error>
+  </mat-form-field>
+
+  <div class="space-between" mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button [disabled]='about.invalid' (click)='onSave("ABOUT")' color='primary'>Save</button>
+  </div>
+</form>
