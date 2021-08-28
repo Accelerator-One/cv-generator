@@ -1,4 +1,4 @@
-<h2> Education </h2>
+<h2 *ngIf='data.editMode || data.education.length !== 0'> Education </h2>
 
 <button *ngIf='data?.editMode' (click)="dialog.openDialog('EDU')" mat-stroked-button class='spread' color="dark"> +
 </button>
@@ -19,7 +19,7 @@
 <br />
 <br />
 
-<h2> Experience </h2>
+<h2 *ngIf='data.editMode || data.experience.length !== 0'> Experience </h2>
 
 <button *ngIf='data?.editMode' (click)="dialog.openDialog('EXP')" mat-stroked-button class='spread' color="dark"> +
 </button>

@@ -1,4 +1,4 @@
-<h2> Skills </h2>
+<h2 *ngIf='data.editMode || data.skills.length !== 0'> Skills </h2>
 
 <button *ngIf='data?.editMode' (click)="dialog.openDialog('SKI')" mat-stroked-button class='spread' color="dark"> +
 </button>
@@ -13,7 +13,7 @@
 <br />
 <br />
 
-<h2> Achievements </h2>
+<h2 *ngIf='data.editMode || data.achievements.length !== 0'> Achievements </h2>
 
 <button *ngIf='data?.editMode' (click)="dialog.openDialog('ACH')" mat-stroked-button class='spread' color="dark"> +
 </button>
@@ -28,7 +28,7 @@
 <br />
 <br />
 
-<h2> Certifications </h2>
+<h2 *ngIf='data.editMode || data.certifications.length !== 0'> Certifications </h2>
 
 <button *ngIf='data?.editMode' (click)="dialog.openDialog('CER')" mat-stroked-button class='spread' color="dark"> +
 </button>
