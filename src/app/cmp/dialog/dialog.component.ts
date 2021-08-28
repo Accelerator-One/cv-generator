@@ -94,7 +94,7 @@ export class DialogComponent implements OnInit {
   });
 
   addName() {
-    const value = this.name.value;
+    const value = this.name.get('name')?.value;
     this.data.name = value;
   }
 
@@ -161,6 +161,10 @@ export class DialogComponent implements OnInit {
 
       case 'ACH':
         this.addAchievement();
+        break;
+
+      case 'NAME':
+        this.addName();
         break;
 
       default:
