@@ -174,12 +174,12 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Name</mat-label>
-    <input matInput placeholder="Enter name here" formControlName='name' required>
+    <input matInput [(ngModel)]='this.data.name' placeholder="Enter name here" formControlName='name' required>
     <mat-error *ngIf="achievements.invalid"> Field value cannot be empty </mat-error>
   </mat-form-field>
 
   <div class="space-between" mat-dialog-actions>
-    <button mat-button mat-dialog-close>Close</button>
+    <div>&nbsp;</div>
     <button mat-button [disabled]='name.invalid' (click)='onSave("NAME")' color='primary'>Save</button>
   </div>
 </form>
@@ -190,12 +190,12 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Email</mat-label>
-    <input matInput placeholder="abcde@gmail.com" formControlName='email' required>
+    <input matInput [(ngModel)]='this.data.email' placeholder="abcde@gmail.com" formControlName='email' required>
     <mat-error *ngIf="email.invalid"> Field value cannot be empty </mat-error>
   </mat-form-field>
 
   <div class="space-between" mat-dialog-actions>
-    <button mat-button mat-dialog-close>Close</button>
+    <div>&nbsp;</div>
     <button mat-button [disabled]='email.invalid' (click)='onSave("EMAIL")' color='primary'>Save</button>
   </div>
 </form>
@@ -206,7 +206,7 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Country Code</mat-label>
-    <input matInput placeholder="+91" formControlName='iso' required>
+    <input matInput [(ngModel)]='this.data.phone.iso' placeholder="+91" formControlName='iso' required>
     <mat-error *ngIf="tel.controls.iso.invalid"> Invalid country code </mat-error>
   </mat-form-field>
 
@@ -215,12 +215,12 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Contact</mat-label>
-    <input matInput placeholder="0123456789" formControlName='phone' required>
+    <input matInput [(ngModel)]='this.data.phone.phone' placeholder="0123456789" formControlName='phone' required>
     <mat-error *ngIf="tel.controls.phone.invalid"> Invalid contact </mat-error>
   </mat-form-field>
 
   <div class="space-between" mat-dialog-actions>
-    <button mat-button mat-dialog-close>Close</button>
+    <div>&nbsp;</div>
     <button mat-button [disabled]='tel.invalid' (click)='onSave("PHONE")' color='primary'>Save</button>
   </div>
 </form>
@@ -231,12 +231,12 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Profile URL</mat-label>
-    <input matInput placeholder="Social media profile URL" formControlName='url' required>
+    <input matInput [(ngModel)]='this.data.url' placeholder="Social media profile URL" formControlName='url' required>
     <mat-error *ngIf="URL.invalid"> Field value cannot be empty </mat-error>
   </mat-form-field>
 
   <div class="space-between" mat-dialog-actions>
-    <button mat-button mat-dialog-close>Close</button>
+    <div>&nbsp;</div>
     <button mat-button [disabled]='URL.invalid' (click)='onSave("URL")' color='primary'>Save</button>
   </div>
 </form>
@@ -247,13 +247,13 @@
 
   <mat-form-field appearance="fill">
     <mat-label>About me</mat-label>
-    <textarea matInput rows="2" placeholder="Write about yourself here..." formControlName='about' required>
+    <textarea matInput [(ngModel)]='this.data.about' rows="2" placeholder="Write about yourself here..." formControlName='about' required>
       </textarea>
     <mat-error *ngIf="about.invalid"> Field value cannot be empty </mat-error>
   </mat-form-field>
 
   <div class="space-between" mat-dialog-actions>
-    <button mat-button mat-dialog-close>Close</button>
+    <div>&nbsp;</div>
     <button mat-button [disabled]='about.invalid' (click)='onSave("ABOUT")' color='primary'>Save</button>
   </div>
 </form>

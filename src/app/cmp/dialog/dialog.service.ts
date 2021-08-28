@@ -12,7 +12,9 @@ export class DialogService {
 
   openDialog(name: string) {
     this.code = name;
-    this.dialog.open(DialogComponent);
+    this.dialog.open(DialogComponent, {
+      disableClose: true
+    });
   }
 
   closeDialog() {
