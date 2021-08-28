@@ -1,0 +1,16 @@
+@import '../../../color.scss';
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+label {
+  color: $primary-dark;
+  cursor: pointer;
+}
+
+.edit {
+  display: flex;
+  justify-content: center;
+}

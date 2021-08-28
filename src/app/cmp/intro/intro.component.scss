@@ -8,14 +8,10 @@ h4 {
   margin: 0 0 0.4em;
 
   &:nth-child(1) {
-    color: #1565c0;
-  }
-
-  &:nth-child(2) {
     color: $primary-normal;
   }
 
-  &:nth-child(3) {
+  &:nth-child(2) {
     color: $primary-light;
   }
 

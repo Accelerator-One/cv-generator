@@ -1,7 +1,17 @@
-<h1 class='mat-header'> {{ data?.name }} </h1>
+<app-hover-edit>
+  <h1 class='mat-header'> {{ data?.name }} </h1>
+</app-hover-edit>
 
-<h4 style="color: #1565c0;"> {{ data?.url }} </h4>
-<h4> {{ data?.email }} </h4>
-<h4> {{ data?.code + " " + data?.phone }} </h4>
+<app-hover-edit>
+  <h4 style="color: #1565c0;"> {{ data?.url }} </h4>
+</app-hover-edit>
+
+<app-hover-edit>
+  <h4> {{ data?.email }} </h4>
+</app-hover-edit>
+
+<app-hover-edit>
+  <h4> {{ data?.code + " " + data?.phone }} </h4>
+</app-hover-edit>
 
 <br/>

@@ -20,6 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RmPanelComponent } from './shared/rm-panel/rm-panel.component';
+import { HoverEditComponent } from './shared/hover-edit/hover-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RmPanelComponent } from './shared/rm-panel/rm-panel.component';
     RightComponent,
     GradeTypePipe,
     DialogComponent,
-    RmPanelComponent
+    RmPanelComponent,
+    HoverEditComponent
   ],
   imports: [
     BrowserModule,

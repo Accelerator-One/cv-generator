@@ -1,0 +1,10 @@
+<div class='flex-start' 
+  (mouseenter)='hover = true' 
+  (mouseleave)='hover = false'>
+  <div style='width:90%'>
+    <ng-content></ng-content>
+  </div>
+  <div *ngIf='hover' class='edit'>
+    <label>Edit</label>
+  </div>
+</div>
