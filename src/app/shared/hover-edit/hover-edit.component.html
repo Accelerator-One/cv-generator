@@ -4,7 +4,7 @@
   <div style='width:90%'>
     <ng-content></ng-content>
   </div>
-  <div *ngIf='hover' class='edit'>
+  <div *ngIf='hover' class='edit' (click)='dialog.emit()'>
     <label>Edit</label>
   </div>
 </div>

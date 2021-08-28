@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-hover-edit',
@@ -11,5 +11,6 @@ export class HoverEditComponent implements OnInit {
   ngOnInit(): void { }
 
   public hover: boolean = false;
+  @Output ('dialog') dialog = new EventEmitter();
 
 }
