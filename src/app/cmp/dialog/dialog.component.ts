@@ -88,6 +88,57 @@ export class DialogComponent implements OnInit {
     this.data.addEducation(value);
   }
 
+  // Name 
+  public name = new FormGroup({
+    name: new FormControl('', [Validators.required])
+  });
+
+  addName() {
+    const value = this.name.value;
+    this.data.name = value;
+  }
+
+  // Email
+  public email = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email])
+  });
+
+  addEmail() {
+    const value = this.name.value;
+    this.data.email = value; 
+  }
+
+  // URL
+  public URL = new FormGroup({
+    url: new FormControl('', [Validators.required])
+  })
+
+  addURL() {
+    const value = this.name.value;
+    this.data.url = value;
+  }
+
+  // Telephone
+  public tel = new FormGroup({
+    iso: new FormControl('', [Validators.required, Validators.pattern('^([0-9]{1,2}-[0-9]{3,4})|([0-9]{1,3})$')]),
+    phone: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')])
+  });
+
+  addTelephone() {
+    const value = this.name.value;
+    console.log(value);    
+  }
+
+  // About
+  public about = new FormGroup({
+    about: new FormControl('', [Validators.required, Validators.maxLength(256)])
+  });
+
+  addAbout() {
+    const value = this.name.value;
+    this.data.about = value;
+  }
+
   onSave(code: string) {
 
     switch (code) {
