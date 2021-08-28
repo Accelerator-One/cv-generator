@@ -11,7 +11,7 @@
 </app-hover-edit>
 
 <app-hover-edit (dialog)='dialog.openDialog("PHONE")'>
-  <h4> {{ data?.code + " " + data?.phone }} </h4>
+  <h4> {{ data.phone?.iso + " " + data?.phone?.phone }} </h4>
 </app-hover-edit>
 
 <br/>

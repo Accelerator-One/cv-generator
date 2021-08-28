@@ -120,13 +120,13 @@ export class DialogComponent implements OnInit {
 
   // Telephone
   public tel = new FormGroup({
-    iso: new FormControl('', [Validators.required, Validators.pattern('^([0-9]{1,2}-[0-9]{3,4})|([0-9]{1,3})$')]),
+    iso: new FormControl('', [Validators.required, Validators.pattern('^\\+{1}(([0-9]{1,2}-[0-9]{3,4})|([0-9]{1,3}))$')]),
     phone: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')])
   });
 
   addTelephone() {
-    const value = this.name.value;
-    console.log(value);    
+    const value = this.tel.value;
+    this.data.phone = value;   
   }
 
   // About
@@ -169,6 +169,10 @@ export class DialogComponent implements OnInit {
 
       case 'EMAIL':
         this.addEmail();
+        break;
+
+      case 'PHONE':
+        this.addTelephone();
         break;
 
       default:

@@ -16,4 +16,9 @@ interface Experience {
   endYear?: Number;
 }
 
-export { Education, Experience };
+interface Contact {
+  iso: String;
+  phone: Number;
+}
+
+export { Education, Experience, Contact };

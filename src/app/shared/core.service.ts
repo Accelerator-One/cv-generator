@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Education, Experience } from '../interfaces';
+import { Education, Experience, Contact } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,7 @@ export class CoreService {
   public url: String;
   public name: String;
   public email: String;
-  public code: String;
-  public phone: Number;
+  public phone: Contact;
 
   public about: String;
   public education: Array<Education>;
@@ -28,8 +27,10 @@ export class CoreService {
     this.url = 'https://www.linkedin.com/sample-profile';
     this.name = 'Your Name Here';
     this.email = 'abcd.wxyz@gmail.com';
-    this.code = '+01';
-    this.phone = 1234567890;
+    this.phone = {
+      'iso': '+10',
+      'phone': 1234567890
+    };
 
     this.about = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam obcaecati exercitationem veniam mollitia quasi, distinctio repellat unde amet aut, iure, maxime minima assumenda placeat laudantium harum sapiente voluptatum rerum necessitatibus.';
     this.education = [];

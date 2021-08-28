@@ -199,3 +199,28 @@
     <button mat-button [disabled]='email.invalid' (click)='onSave("EMAIL")' color='primary'>Save</button>
   </div>
 </form>
+
+
+<form [formGroup]='tel' *ngIf='dialog.code === "PHONE"'>
+  <h2 mat-dialog-title>Edit Contact</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Country Code</mat-label>
+    <input matInput placeholder="+91" formControlName='iso' required>
+    <mat-error *ngIf="tel.controls.iso.invalid"> Invalid country code </mat-error>
+  </mat-form-field>
+
+  <br />
+  <br />
+
+  <mat-form-field appearance="fill">
+    <mat-label>Contact</mat-label>
+    <input matInput placeholder="0123456789" formControlName='phone' required>
+    <mat-error *ngIf="tel.controls.phone.invalid"> Invalid contact </mat-error>
+  </mat-form-field>
+
+  <div class="space-between" mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button [disabled]='tel.invalid' (click)='onSave("PHONE")' color='primary'>Save</button>
+  </div>
+</form>
