@@ -114,7 +114,7 @@ export class DialogComponent implements OnInit {
   })
 
   addURL() {
-    const value = this.name.value;
+    const value = this.URL.get('url')?.value;
     this.data.url = value;
   }
 
@@ -173,6 +173,10 @@ export class DialogComponent implements OnInit {
 
       case 'PHONE':
         this.addTelephone();
+        break;
+
+      case 'URL':
+        this.addURL();
         break;
 
       default:

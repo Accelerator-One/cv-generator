@@ -224,3 +224,19 @@
     <button mat-button [disabled]='tel.invalid' (click)='onSave("PHONE")' color='primary'>Save</button>
   </div>
 </form>
+
+
+<form [formGroup]='URL' *ngIf='dialog.code === "URL"'>
+  <h2 mat-dialog-title>Social media details</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Profile URL</mat-label>
+    <input matInput placeholder="Social media profile URL" formControlName='url' required>
+    <mat-error *ngIf="URL.invalid"> Field value cannot be empty </mat-error>
+  </mat-form-field>
+
+  <div class="space-between" mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button [disabled]='URL.invalid' (click)='onSave("URL")' color='primary'>Save</button>
+  </div>
+</form>
