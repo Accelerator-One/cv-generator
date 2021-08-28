@@ -168,6 +168,7 @@
   </div>
 </form>
 
+
 <form [formGroup]='name' *ngIf='dialog.code === "NAME"'>
   <h2 mat-dialog-title>Edit Name</h2>
 
@@ -180,5 +181,21 @@
   <div class="space-between" mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
     <button mat-button [disabled]='name.invalid' (click)='onSave("NAME")' color='primary'>Save</button>
+  </div>
+</form>
+
+
+<form [formGroup]='email' *ngIf='dialog.code === "EMAIL"'>
+  <h2 mat-dialog-title>Edit Email</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="abcde@gmail.com" formControlName='email' required>
+    <mat-error *ngIf="email.invalid"> Field value cannot be empty </mat-error>
+  </mat-form-field>
+
+  <div class="space-between" mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button [disabled]='email.invalid' (click)='onSave("EMAIL")' color='primary'>Save</button>
   </div>
 </form>

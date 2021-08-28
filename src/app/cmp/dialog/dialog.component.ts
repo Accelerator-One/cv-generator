@@ -104,8 +104,8 @@ export class DialogComponent implements OnInit {
   });
 
   addEmail() {
-    const value = this.name.value;
-    this.data.email = value; 
+    const value = this.email.get('email')?.value;
+    this.data.email = value;
   }
 
   // URL
@@ -165,6 +165,10 @@ export class DialogComponent implements OnInit {
 
       case 'NAME':
         this.addName();
+        break;
+
+      case 'EMAIL':
+        this.addEmail();
         break;
 
       default:
