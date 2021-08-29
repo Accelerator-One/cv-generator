@@ -14,13 +14,16 @@ export class RightComponent implements OnInit {
 
   deleteAchievement(index: number) {
     this.data.achievements = this.data.achievements.filter((val, it) => (index !== it));
+    this.data.localStore.next();
   }
 
   deleteSkill(index: number) {
     this.data.skills = this.data.skills.filter((val, it) => (index !== it));
+    this.data.localStore.next();
   }
 
   deleteCertificate(index: number) {
     this.data.certifications = this.data.certifications.filter((val, it) => (it !== index));
+    this.data.localStore.next();
   }
 }

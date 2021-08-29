@@ -221,6 +221,7 @@ export class DialogComponent implements OnInit {
 
     }
 
+    this.data.localStore.next();
     this.dialog?.closeDialog();
 
   }

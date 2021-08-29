@@ -14,10 +14,12 @@ export class LeftComponent implements OnInit {
 
   deleteEducation(index: number) {
     this.data.education = this.data.education.filter((val, it) => (it !== index));
+    this.data.localStore.next();
   }
 
   deleteExperience(index: number) {
     this.data.experience = this.data.experience.filter((val, it) => (it !== index));
+    this.data.localStore.next();
   }
 
 }
