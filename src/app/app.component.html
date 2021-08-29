@@ -4,12 +4,12 @@
 <div class='space-between'>
 
   <div class='intro' style="width:100%;">
-    <br/>
+    <br />
     <app-intro></app-intro>
   </div>
 
-  <div class='profile' style="width: 12em">
-    <app-profile></app-profile>
+  <div (mouseenter)='profileHover=true' (mouseleave)='profileHover = false' class='profile'>
+    <app-profile [hover]='profileHover'></app-profile>
   </div>
 
 </div>
@@ -19,7 +19,7 @@
 </div>
 
 <div class='main'>
-  
+
   <div class='left'>
     <app-left></app-left>
   </div>
@@ -35,4 +35,3 @@
     <mat-icon>print</mat-icon>
   </button>
 </div>
-

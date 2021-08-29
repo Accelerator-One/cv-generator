@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-profile',
@@ -11,6 +11,7 @@ export class ProfileComponent implements AfterViewInit {
   public imgSelected: Boolean = false;
   public viewMode: Boolean = false;
   public iconName: string = 'account_circle';
+  @Input('hover') removeIcon: boolean = false;
 
   constructor() { }
 
@@ -105,4 +106,10 @@ export class ProfileComponent implements AfterViewInit {
 
   }
 
+  removeImage() {
+    const imgRef: any = document.getElementById('profileImg');
+    window.localStorage.removeItem('avatar');
+    this.imgSelected = false;
+    imgRef.src = '';
+  }
 }

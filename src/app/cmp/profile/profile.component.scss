@@ -29,3 +29,12 @@ img {
   height: 12em;
   overflow: hidden;
 }
+
+.close {
+  position: relative;
+  cursor: pointer;
+  bottom: 6.8em;
+  left: 6.8em;
+  font-size: x-large;
+  height: 0px;
+}

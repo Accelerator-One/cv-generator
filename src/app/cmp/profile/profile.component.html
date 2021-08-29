@@ -8,3 +8,5 @@
 </div>
 
 <input id="profileInput" type="file" accept="image/*" class="hidden" (change)='setProfile()' />
+<span *ngIf='imgSelected && removeIcon' (click)='removeImage()' class='close'> &times; </span>
+<span *ngIf='!(imgSelected && removeIcon)' class='close'> &nbsp; </span>

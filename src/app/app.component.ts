@@ -7,5 +7,6 @@ import { CoreService } from './shared/core.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public data: CoreService) {}
+  public profileHover: boolean = false;
+  constructor(public data: CoreService) { }
 }
