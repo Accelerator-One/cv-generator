@@ -44,6 +44,7 @@ export class DialogComponent implements OnInit {
 
   // Experience
   public present: boolean = false;
+  public expError: string = '';
   public years: Array<Number> = [];
   public months: Array<string> = [
     'January', 'February', 'March',
@@ -73,6 +74,37 @@ export class DialogComponent implements OnInit {
 
     this.data.addExperience(value);
 
+  }
+
+  timeValidator() {
+
+    const { 
+      startYear, 
+      endYear, 
+      startMonth, 
+      endMonth 
+    } = this.experience.value;
+
+    if(this.present)
+      return true;
+
+    if(!endMonth && !endYear)
+      return this.present;
+
+    if((!endMonth && endYear) || (endMonth && !endYear))
+      return false;
+    
+    if(startYear === endYear && startMonth > endMonth) {
+      this.expError = 'Start month cannot be greater than end month';
+      return false;
+    }
+    
+    if(startYear > endYear) {
+      this.expError = 'Start year cannot be greater than end year';
+      return false;
+    }
+      
+    return true;
   }
 
   // Education

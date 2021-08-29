@@ -112,11 +112,15 @@
 
   </div>
 
+  <ng-container *ngIf='!timeValidator() || experience.invalid'>
+    <mat-error> {{ expError }} </mat-error>
+  </ng-container>
+
   <br />
 
   <div class="space-between" mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
-    <button mat-button [disabled]='experience.invalid' (click)='onSave("EXP")' color='primary'>Save</button>
+    <button mat-button [disabled]='!timeValidator() || experience.invalid' (click)='onSave("EXP")' color='primary'>Save</button>
   </div>
 </form>
 
