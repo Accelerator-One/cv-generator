@@ -1,0 +1,73 @@
+{
+  "configVersion": 1,
+  "timestamp": 1630337614711,
+  "index": "/cv-generator/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/cv-generator/favicon.ico",
+        "/cv-generator/index.html",
+        "/cv-generator/main.f5f826e817f04fa9177d.js",
+        "/cv-generator/manifest.webmanifest",
+        "/cv-generator/polyfills.42fba1fac95f1b8e5ffb.js",
+        "/cv-generator/runtime.7f3ed551f639d2b15ef4.js",
+        "/cv-generator/styles.37d4f0d3d01c435a503d.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/cv-generator/assets/icons/icon-16x16.png",
+        "/cv-generator/assets/icons/icon-192x192.png",
+        "/cv-generator/assets/icons/icon-32x32.png",
+        "/cv-generator/assets/icons/icon-512x512.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/cv-generator/assets/icons/icon-16x16.png": "e9b53e2f6b7f3916046791d9b2f559aa018097d6",
+    "/cv-generator/assets/icons/icon-192x192.png": "34c2d747923f89687e8e38055ce651a36a59ff51",
+    "/cv-generator/assets/icons/icon-32x32.png": "bba23e1838bcceaa2ec0a00be718cfd3ee655fc6",
+    "/cv-generator/assets/icons/icon-512x512.png": "18db3981213daf1bacbb1ea6890dabe5da915214",
+    "/cv-generator/favicon.ico": "e4714b8005ffc7a8736af582efb92763c568cc22",
+    "/cv-generator/index.html": "af500a6d9d410d6541a03452e10eca154ec7a129",
+    "/cv-generator/main.f5f826e817f04fa9177d.js": "2c4d225e5400b2e6d91ca9980cf9a2d110883361",
+    "/cv-generator/manifest.webmanifest": "34a938c904840769e3f6a70f742501450d56eff4",
+    "/cv-generator/polyfills.42fba1fac95f1b8e5ffb.js": "9fc9931fb6ddd80e75ed141c019cddd9b5e058e6",
+    "/cv-generator/runtime.7f3ed551f639d2b15ef4.js": "62bc494e1638ad25566fa4335113cc6344aad7d5",
+    "/cv-generator/styles.37d4f0d3d01c435a503d.css": "f5477659303044f31a7918c914cc2870fb85001a"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
