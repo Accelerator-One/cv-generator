@@ -111,5 +111,6 @@ export class ProfileComponent implements AfterViewInit {
     window.localStorage.removeItem('avatar');
     this.imgSelected = false;
     imgRef.src = '';
+    window.location.reload();
   }
 }
