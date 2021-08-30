@@ -1,8 +1,17 @@
 # CV Generator
+Utility for quickly generating standardized CVs built using Angular  
 
-![Sample](./assets/sample.png)
+<br/>
+
+## Screenshot (sample)
+![Sample](./assets/sample.png)  
+
+## Live demo
+[https://accelerator-one.github.io/cv-generator/](https://accelerator-one.github.io/cv-generator/)  
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+
+<br/>
 
 ## Development server
 
@@ -26,4 +35,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Also, in case of any problems faced with the codebase, mark them under **Issues** section of this repository.
